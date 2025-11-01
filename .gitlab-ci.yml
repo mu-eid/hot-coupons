@@ -1,0 +1,58 @@
+image: node:lts-alpine3.22
+
+stages:
+  - install
+  - deploy
+
+# This prevents re-downloading node_modules every time
+cache:
+  key:
+    files:
+      - pnpm-lock.yaml
+  paths:
+    - .pnpm-store
+
+# Global variables available to all jobs
+variables:
+  PNPM_HOME: "/pnpm"
+  PNPM_CACHE_DIR: ".pnpm-store"
+
+# This runs before every job to set up pnpm
+before_script:
+  - export PATH="$PNPM_HOME:$PATH"
+  - corepack enable
+  - corepack prepare pnpm@latest --activate
+
+# Job 1: Install dependencies
+install_dependencies:
+  stage: install
+  script:
+    - pnpm install --frozen-lockfile
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 hour
+  only:
+    - main
+    - merge_requests
+
+# Job 2: Deploy to Cloudflare Workers (Production)
+deploy_production:
+  stage: deploy
+  script:
+    - pnpm run deploy
+  dependencies:
+    - install_dependencies
+  environment:
+    name: production
+    # This URL will appear in GitLab's environments page
+    url: https://your-worker.your-subdomain.workers.dev
+  only:
+    - main
+  # Require these secret variables to be set in GitLab CI/CD settings
+  # Go to Settings > CI/CD > Variables to add these
+  variables:
+    # Your Cloudflare Account ID (find in Cloudflare dashboard)
+    CLOUDFLARE_ACCOUNT_ID: $CLOUDFLARE_ACCOUNT_ID
+    # Your Cloudflare API Token (create one with Workers edit permissions)
+    CLOUDFLARE_API_TOKEN: $CLOUDFLARE_API_TOKEN
