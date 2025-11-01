@@ -1,0 +1,57 @@
+:root {
+  --color-main-theme: var(--grey-700);
+  --color-theme-orange: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+  --color-text-primary: var(--grey-700);
+  --color-text-secondary: var(--grey-500);
+}
+
+/* Common Shein landing page layout */
+body {
+  min-block-size: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-size: var(--font-base);
+  color: var(--color-text-primary);
+  background-color: var(--grey-100);
+}
+
+/* Custom styles */
+
+/* Sections Card */
+
+#singlesday,
+#singlesday .section-info {
+  background-color: var(--purple-100);
+}
+
+#singlesday .badge,
+#singlesday .section-info .badge {
+  color: var(--grey-10);
+  background: linear-gradient(
+    135deg,
+    var(--rose-300) 0%,
+    var(--purple-500) 100%
+  );
+  box-shadow: rgba(205, 1, 212, 0.4) 0px 3px 12px;
+}
+
+#singlesday .coupon-footer {
+  border-color: var(--purple-300);
+  background: rgba(63, 57, 200, 0.08);
+}
+
+/* Red Variation */
+#singles-day-red {
+  background-color: var(--red-100);
+}
+
+#singles-day-red .badge {
+  color: var(--grey-10);
+  background: linear-gradient(
+    135deg,
+    var(--rose-300) 0%,
+    var(--red-400) 100%
+  );
+  box-shadow: rgba(205, 1, 212, 0.4) 0px 3px 12px;
+}

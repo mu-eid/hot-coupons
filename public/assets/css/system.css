@@ -1,0 +1,156 @@
+/* ==================================== CSS Reset rules ========================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+iframe,
+video {
+  display: block;
+  block-size: auto;
+  max-inline-size: 100%;
+  font-style: italic;
+}
+
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration-line: none;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* ========================================= Design Tokens ============================================ */
+:root {
+  /* Grey */
+  --grey-700: #131316;
+  --grey-600: #303036;
+  --grey-500: #515159;
+  --grey-400: #73737b;
+  --grey-300: #98989e;
+  --grey-200: #bfbfc2;
+  --grey-100: #e7e7e8;
+  --grey-50: #f5f5f5;
+  --grey-10: #fcfcfc;
+
+  /* Ocean Green */
+  --ocean-600: #293b36;
+  --ocean-500: #435d56;
+  --ocean-400: #5e8279;
+  --ocean-300: #7ca99d;
+  --ocean-200: #9ad2c3;
+  --ocean-100: #d6f6ed;
+  --ocean-50: #eefbf8;
+  --ocean-10: #f3fcfa;
+
+  /* Orange */
+  --orange-500: #6f5100;
+  --orange-400: #9a7200;
+  --orange-300: #c99500;
+  --orange-200: #f9ba00;
+  --orange-100: #ffe9ce;
+
+  /* Yellow */
+  --yellow-500: #5e6015;
+  --yellow-400: #818520;
+  --yellow-300: #a7ac2d;
+  --yellow-200: #ced439;
+  --yellow-100: #f3fa45;
+
+  /* Purple */
+  --purple-700: #0c0a3e;
+  --purple-600: #242083;
+  --purple-500: #3f39c8;
+  --purple-400: #6865db;
+  --purple-300: #918fe7;
+  --purple-200: #bbbaf0;
+  --purple-100: #e5e5f9;
+  --purple-50: #eeeefb;
+  --purple-10: #fbfbfe;
+
+  /* Ocean Blue */
+  --blue-600: #00304b;
+  --blue-500: #00517c;
+  --blue-400: #0075b0;
+  --blue-300: #009ce7;
+  --blue-200: #7ac0ff;
+  --blue-100: #cee4ff;
+
+  /* Red */
+  --red-700: #480000;
+  --red-600: #820001;
+  --red-500: #c20002;
+  --red-400: #ff2324;
+  --red-300: #ff8384;
+  --red-200: #ffc0c0;
+  --red-100: #ffeced;
+
+  /* Rose */
+  --rose-600: #62213c;
+  --rose-500: #97375f;
+  --rose-400: #cf4f84;
+  --rose-300: #e287a7;
+  --rose-200: #edbccc;
+  --rose-100: #faeef1;
+
+  /* =============================== Fonts =================================== */
+  --font-ar: "Cairo", system-ui, -apple-system, sans-serif;
+  --font-en: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-logo-ar: "Lalezar", system-ui, -apple-system, sans-serif;
+  --font-logo-en: "Fugaz One", system-ui, -apple-system, sans-serif;
+  --font-code: "Courier Prime", "Courier New", Courier, monospace;
+  --font-riyal: "Saudi Riyal" !important;
+
+  /* =========================== Font Sizes ================================= */
+  --font-xs: clamp(0.64rem, 0.05vi + 0.63rem, 0.67rem);
+  --font-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+  --font-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+  --font-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
+  --font-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+  --font-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+  --font-xxl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
+  --font-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
+
+  /* ============================== Effects ================================= */
+
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-50: 50px;
+  --radius-round: 50%;
+}
+
+/* ========================= Page Layout =================================== */
+html[lang^="ar"] body {
+  font-family: var(--font-ar);
+}
+
+html[lang^="en"] body {
+  font-family: var(--font-en);
+}

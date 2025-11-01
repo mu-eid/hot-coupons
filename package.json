@@ -1,0 +1,12 @@
+{
+	"name": "hot-coupons",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "pnpx wrangler dev --host 0.0.0.0 --port 8080",
+		"deploy": "pnpx wrangler deploy"
+	},
+	"devDependencies": {
+		"wrangler": "^4.45.3"
+	}
+}
